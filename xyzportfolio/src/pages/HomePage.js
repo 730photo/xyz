@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 function HomePage(props) {
 
     return(
-        <Hero />
+        <Hero title={props.title} subTitle={props.subTitle} />
     );
 }
 
