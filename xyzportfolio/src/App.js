@@ -60,9 +60,10 @@ class App extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        {/* whenever you are at the route path, render the corresponding component */}
         <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} />} />
-        <Route path="/" exact render={() => <AboutPage title={this.state.about.title} />} />
-        <Route path="/" exact render={() => <ContactPage title={this.state.contact.title} />} />
+        <Route path="/about" render={() => <AboutPage title={this.state.about.title} />} />
+        <Route path="/contact" render={() => <ContactPage title={this.state.contact.title} />} />
         <Footer />
       </Container>
     </Router>
