@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Card from '../components/Card';
 
-import bronny from '../assets/images/bronny.jpg';
+import weather from '../assets/images/weather.png';
 import Mamba from '../assets/images/Mamba.jpg';
 import Westbrook from '../assets/images/Westbrook.jpg';
 
@@ -18,10 +18,10 @@ class Carousel extends React.Component {
             items: [
                 {
                     id: 0,
-                    title: 'LeBron',
-                    subTitle: 'photo taken by architekxyz',
-                    imgSrc: bronny,
-                    // link: 'https://i.imgur.com/60rsvsW.jpg',
+                    title: 'weather API',
+                    // subTitle: 'check your weather forcast',
+                    imgSrc: weather,
+                    link: 'https://github.com/730photo/Weather-API',
                     selected: false
                 },
                 {
@@ -29,7 +29,7 @@ class Carousel extends React.Component {
                     title: 'Kobe',
                     subTitle: 'photo taken by architekxyz',
                     imgSrc: Mamba,
-                    // link: 'https://i.imgur.com/6ljjbpt.jpg',
+                    link: 'https://i.imgur.com/6ljjbpt.jpg',
                     selected: false
                 },
                 {
@@ -37,7 +37,7 @@ class Carousel extends React.Component {
                     title: 'Russell',
                     subTitle: 'photo taken by architekxyz',
                     imgSrc: Westbrook,
-                    // link: 'https://i.imgur.com/Erwq9gf.jpg',
+                    link: 'https://i.imgur.com/Erwq9gf.jpg',
                     selected: false
                 },
             ]
