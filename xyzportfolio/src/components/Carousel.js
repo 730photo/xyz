@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Card from '../components/Card';
+
 import bronny from '../assets/images/bronny.jpg';
 import Mamba from '../assets/images/Mamba.jpg';
 import Westbrook from '../assets/images/Westbrook.jpg';
@@ -17,7 +21,7 @@ class Carousel extends React.Component {
                     title: 'LeBron',
                     subTitle: 'photo taken by architekxyz',
                     imgSrc: bronny,
-                    link: 'hhttps://i.imgur.com/60rsvsW.jpg',
+                    // link: 'https://i.imgur.com/60rsvsW.jpg',
                     selected: false
                 },
                 {
@@ -25,7 +29,7 @@ class Carousel extends React.Component {
                     title: 'Kobe',
                     subTitle: 'photo taken by architekxyz',
                     imgSrc: Mamba,
-                    link: 'https://i.imgur.com/6ljjbpt.jpg',
+                    // link: 'https://i.imgur.com/6ljjbpt.jpg',
                     selected: false
                 },
                 {
@@ -33,7 +37,7 @@ class Carousel extends React.Component {
                     title: 'Russell',
                     subTitle: 'photo taken by architekxyz',
                     imgSrc: Westbrook,
-                    link: 'https://i.imgur.com/Erwq9gf.jpg',
+                    // link: 'https://i.imgur.com/Erwq9gf.jpg',
                     selected: false
                 },
             ]
@@ -41,9 +45,37 @@ class Carousel extends React.Component {
         }
     }
 
+    handleCardClick = (id, card) => {
+
+        let items = [...this.state.items];
+
+        // so we get the toggle function when we hover over the cards
+        items[id].selected = items[id].selected ? false : true;
+
+        // so onle one card can be toggled at a time
+        items.forEach(item => {
+            if (item.id !== id) {
+                item.selected = false;
+            }
+        });
+
+        this.setState({
+            items
+        });
+    }
+
+    makeItems = (items) => {
+        return items.map(item => {
+            return <Card item={item} click = {(e => this.handleCardClick(item.id, e))} key={item.id} />
+        })
+    }
     render() {
         return(
-            <p>Carousel works!</p>
+            <Container fluid={true}>
+                <Row className="justify-content-around">
+                    {this.makeItems(this.state.items)}
+                </Row>
+            </Container>
         );
     }
 }
