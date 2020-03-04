@@ -24,8 +24,8 @@ class App extends React.Component {
       ],
 
       home: {
-        title: 'The Gallery',
-        subTitle: 'my top 3 projects',
+        title: 'My Portfolio',
+        // subTitle: 'my top 3 projects',
         // text: 'Check me out',
       },
 

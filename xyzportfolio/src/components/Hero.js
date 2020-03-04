@@ -12,7 +12,7 @@ function Hero(props){
                     {/* makes it responsive */}
                     <Col lg={4} md={8} sm={12}>
                     { props.title && <h1 className="display-4 font-weight-bold">{props.title}</h1> }
-                    { props.subTitle && <h4 className="display-7 font-weight-light">{props.subTitle}</h4> }
+                    {/* { props.subTitle && <h4 className="display-7 font-weight-light">{props.subTitle}</h4> } */}
                     {/* { props.text && <h3>{props.text}</h3> } */}
                     </Col>
                 </Row>
